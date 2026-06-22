@@ -29,7 +29,7 @@ public class UserController {
     }
 
 //return ResponseEntity.status(HttpStatus.CREATED).body(createUser(user).getBody());
-   @GetMapping("{id}")
+   @GetMapping("/{id}")
     public ResponseEntity<User>getuserByid(@PathVariable Long id){
         return userservice.getUserByid((id)).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
    }
